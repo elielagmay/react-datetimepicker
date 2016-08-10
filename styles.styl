@@ -1,0 +1,143 @@
+$width = 30px
+$height = 24px
+$padding = 8px
+$tn = 0.1s ease-in-out
+
+.DateTimeInput
+.DateTimePicker
+.DatePicker
+.TimePicker
+.TimezonePicker
+    border-radius 4px
+    box-shadow 0 0 8px rgba(0, 0, 0, 0.5)
+    display inline-block
+    font-size 11px
+    margin 20px 0 0 20px
+    padding $padding
+    text-align center
+    user-select none
+    vertical-align top
+    width $width * 7 + $padding * 2
+
+.DateTimePicker
+    padding 0
+
+    .DatePicker
+    .TimePicker
+    .TimezonePicker
+        display block
+        border-bottom 1px #CCCCCC solid
+        border-radius 0
+        box-shadow none
+        margin 0
+
+.DatePickerHead
+    padding-bottom $padding
+
+.DatePickerPrev
+.DatePickerNext
+.DatePickerMonth
+.DatePickerDayname
+.DatePickerDay
+    cursor default
+    display inline-block
+    height $height
+    line-height $height
+    text-align center
+    vertical-align top
+
+.DatePickerPrev
+.DatePickerNext
+.DatePickerDayname
+.DatePickerDay
+    width $width
+
+.DatePickerMonth
+    color #333333
+    font-weight bold
+    text-transform uppercase
+    width "calc(100% - %s)" % ($width * 2)
+
+.DatePickerPrev
+.DatePickerNext
+    color #999999
+    transition $tn
+    &:hover
+        color #2196F3
+
+.DatePickerDayname
+    color #999999
+    font-weight bold
+    text-transform uppercase
+
+.DatePickerDay
+    color #333333
+    transition $tn
+    &:hover
+        background #EEEEEE
+
+.DatePickerDay.isNotSameMonth
+    color #999999
+
+.DatePickerDay.isSelected
+    background #2196F3
+    color #FFFFFF
+
+.TimePickerUnit
+    cursor default
+    display inline-block
+    height $height * 2
+    line-height $height * 2
+    text-align center
+    vertical-align top
+    width $width
+
+.TimePickerUnit:nth-child(n + 2)
+    margin-left $width * 0.33
+
+.TimePickerUnit:nth-child(2)
+.TimePickerUnit:nth-child(3)
+    position relative
+
+    &:before
+        content ":"
+        display inline-block
+        font-weight bold
+        height $height * 2
+        line-height $height * 2
+        position absolute
+        top 0
+        left $width * -0.33
+        width $width * 0.33
+
+.TimePickerUnitValue
+    height $height
+    line-height $height
+
+.TimePickerUnitNext
+.TimePickerUnitPrev
+    color #999999
+    height $height * 0.5
+    line-height $height * 0.5
+    display block
+    transition $tn
+    &:hover
+        color #2196F3
+
+.TimePickerUnitNext .fa
+    vertical-align bottom
+
+.TimePickerUnitPrev .fa
+    vertical-align top
+
+.DateTimeInput input
+.TimezonePicker select
+    background transparent
+    border 0
+    font-size 11px
+    height $height
+    outline 0
+    width 100%
+
+.DateTimeInput
+    width 300px
